@@ -1,15 +1,44 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import "primeicons/primeicons.css";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+:root {
+    --color-primary: #a3d0e7;
+    --color-secondary: #a3e4c6;
+    --color-background: #ffffff;
+    --color-text: #d3d9de;
+    --font-family:
+        'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+html h1 {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 2rem;
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+    min-height: 100dvh;
+    min-width: 100dvw;
+    background-color: var(--color-background);
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+body header {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+body header h1 {
+    color: var(--color-background);
 }
