@@ -1,5 +1,5 @@
+import AppFrame from '~/components/common/app-frame';
 import type { Route } from './+types/home';
-import { Welcome } from '../welcome/welcome';
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -9,5 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-    return <Welcome children={<h2>Bienvenido a Tu Zona Tienda</h2>} />;
+    return <AppFrame>{/* Home content goes here */}</AppFrame>;
 }

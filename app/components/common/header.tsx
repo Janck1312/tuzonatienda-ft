@@ -1,4 +1,12 @@
+import { useContext } from 'react';
+import { AppContext } from '~/context/app.context';
+
 export default function Header() {
+    const { user, setUser } = useContext<{
+        user: any;
+        setUser: React.Dispatch<React.SetStateAction<any>>;
+    }>(AppContext);
+
     return (
         <header className="flex px-4 py-6 bg-primary">
             <h1>Tu zona tienda</h1>
