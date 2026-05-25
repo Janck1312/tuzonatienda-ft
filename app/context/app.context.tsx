@@ -1,8 +1,3 @@
-import { createContext, type Dispatch, type SetStateAction } from "react";
+import { createContext } from "react";
 
-type AppContextType = {
-  user: unknown;
-  setUser: Dispatch<SetStateAction<unknown>>;
-} | null;
-
-export const AppContext = createContext<AppContextType>(null);
+export const AppContext = createContext<any>({user: {}, setUser: () => {}});
