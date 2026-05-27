@@ -99,7 +99,7 @@ export default function Login({}) {
         <AppFrame>
             <div className="max-w-md mx-auto mt-10">
                 <h2 className="text-2xl font-bold mb-6 text-center text-black">
-                    Ingresar
+                    Iniciar sesión en tu cuenta
                 </h2>
                 <form className="space-y-4" onSubmit={onSubmitLogin}>
                     <div>
