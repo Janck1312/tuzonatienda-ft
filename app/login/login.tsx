@@ -1,7 +1,6 @@
-import { AxiosError } from 'axios';
 import type React from 'react';
 import { useContext, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { z } from 'zod';
 import AppFrame from '~/components/common/app-frame';
 import { AppContext } from '~/context/app.context';
@@ -12,6 +11,7 @@ export default function Login({}) {
     const [form, setForm] = useState({ email: '', password: '' });
     const [errors, setErrors] = useState({ email: '', password: '' });
     const context = useContext(AppContext);
+    const navigate = useNavigate();
 
     const loginSchema = z.object({
         email: z
@@ -35,7 +35,7 @@ export default function Login({}) {
                 if (res?.data?.token) {
                     LocalStorageApi.setValue('user', res.data);
                     context.setUser(res.data);
-                    //navigate to dashboard
+                    navigate('/dashboard');
                 } else {
                     setErrors((prev) => ({
                         ...prev,

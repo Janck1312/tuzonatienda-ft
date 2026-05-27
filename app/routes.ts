@@ -9,5 +9,9 @@ export default [
     {
         path: "signup",
         file: "routes/signup.tsx",
+    },
+    {
+        path:"dashboard",
+        file: "routes/dashboard.tsx",
     }
 ] satisfies RouteConfig;

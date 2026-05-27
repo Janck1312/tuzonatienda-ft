@@ -8,6 +8,7 @@ interface AppContextProviderProps {
 
 export const AppContextProvider = ({ children }: AppContextProviderProps) => {
     const [user, setUser] = useState(null);
+    const [breadcrumbs, setBreadcrumbs] = useState([]);
 
     useEffect(() => {
         const interceptor = api.interceptors.request.use(config => {
@@ -20,7 +21,7 @@ export const AppContextProvider = ({ children }: AppContextProviderProps) => {
     }, []);
 
     return (
-        <AppContext.Provider value={{ user, setUser }}>
+        <AppContext.Provider value={{ user, setUser, breadcrumbs, setBreadcrumbs }}>
             {children}
         </AppContext.Provider>
     );
