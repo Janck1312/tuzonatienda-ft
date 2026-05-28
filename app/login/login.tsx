@@ -35,7 +35,7 @@ export default function Login({}) {
                 if (res?.data?.token) {
                     LocalStorageApi.setValue('user', res.data);
                     context.setUser(res.data);
-                    navigate('/dashboard');
+                    navigate('/dashboard', { replace: true });
                 } else {
                     setErrors((prev) => ({
                         ...prev,

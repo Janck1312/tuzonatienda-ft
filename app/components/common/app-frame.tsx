@@ -4,6 +4,7 @@ import Header from './header';
 import { AppContextProvider } from '~/context/app.context-provider';
 import { AppContext } from '~/context/app.context';
 import Breadcrumbs from './breadcrums';
+import Sidebar from './sidebar';
 
 export default function AppFrame({ children }: { children: React.ReactNode }) {
     const context = useContext(AppContext);
@@ -14,7 +15,10 @@ export default function AppFrame({ children }: { children: React.ReactNode }) {
                 { Object.keys(context.user || {}).length !== 0 && (
                     <Breadcrumbs></Breadcrumbs>
                 )}
-                <main className="flex-grow p-4">{children}</main>
+                <main className="flex p-4">
+                    {Object.keys(context.user || {}).length !== 0 && (<Sidebar></Sidebar>)}
+                    {children}
+                </main>
                 <Footer></Footer>
             </div>
         </AppContextProvider>

@@ -13,7 +13,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function() {
     const context = useContext(AppContext);
-    if(Object.keys(context.user || {}).length === 0) {
+    if(Object.keys(context.user || {}).length !== 0) {
         return <Navigate to="/login" replace />;
     }
     return <Dashboard />;
