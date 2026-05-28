@@ -10,12 +10,12 @@ export default function AppFrame({ children }: { children: React.ReactNode }) {
     const context = useContext(AppContext);
     return (
         <AppContextProvider>
-            <div className="min-h-screen flex flex-col">
+            <div className="h-screen flex flex-col">
                 <Header></Header>
                 { Object.keys(context.user || {}).length !== 0 && (
                     <Breadcrumbs></Breadcrumbs>
                 )}
-                <main className="flex p-4">
+                <main className="flex p-4 h-screen">
                     {Object.keys(context.user || {}).length !== 0 && (<Sidebar></Sidebar>)}
                     {children}
                 </main>
